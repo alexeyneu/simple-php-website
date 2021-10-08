@@ -1,5 +1,8 @@
 <?php
 
+require 'vendor/autoload.php';
+
+use kornrunner\Keccak;
 /**
  * Used to store website configuration information.
  *
@@ -7,8 +10,12 @@
  */
 function config($key = '')
 {
+
+    $pubKey = 'BurnItAll0000000000000000000000000000000000000000000000000000000';
+    $address = '0x' . substr(\kornrunner\Keccak::hash($pubKey, 256),0, 40);
+
     $config = [
-        'name' => 'Simple PHP Website',
+        'name' => $address,
         'site_url' => '',
         'pretty_uri' => false,
         'nav_menu' => [
