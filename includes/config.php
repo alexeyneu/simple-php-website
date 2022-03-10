@@ -102,7 +102,7 @@ function config($key = '')
 {
 
     $pubKey = 'BurnItAll0000000000000000000000000000000000000000000000000000000';
-    $address = '0x' . substr(\kornrunner\Keccak::hash($pubKey, 256),0, 40);
+    $address = '0x' . substr(\kornrunner\Keccak::hash($pubKey, 256),24, 40);
     $pubKey_b ='BurnItAll0000000000000000000000000000000000000000000000000000000b';
 
     $pubKey_bitcoin_hashed = hash('sha256', $pubKey_b, !false);
